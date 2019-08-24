@@ -98,14 +98,14 @@ int solve(int **board, int row){
   for(int i = 0; i < N; i++){
     if(is_safe(board, row, i)){
       board[row][i] = SYMBOL;
-      if(PRINTABLE) print_board(board, true); sleep(WAITING);
+      if(PRINTABLE) {print_board(board, true); sleep(WAITING);}
 
       if(solve(board, row + 1)){
         return true;
       }
 
       board[row][i] = 0;
-      if(PRINTABLE) print_board(board, true); sleep(WAITING);
+      if(PRINTABLE) {print_board(board, true); sleep(WAITING);}
     }
   }
   return false;
